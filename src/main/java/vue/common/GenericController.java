@@ -38,14 +38,5 @@ public interface GenericController<T, K> {
      * @return
      */
     public boolean delete(K id);
-
-    /**
-     * 모델 리스트 가져오기
-     *
-     * @param page
-     * @param sortOption
-     * @return
-     */
-    public List<T> find(int page, String sortOption);
 }
 

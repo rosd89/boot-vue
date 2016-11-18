@@ -1,12 +1,10 @@
 package vue.member;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import vue.common.GenericController;
 
 import javax.validation.Valid;
-import java.util.List;
 
 /**
  * Created by sam on 2016. 11. 19..
@@ -32,17 +30,14 @@ public class MemberController implements GenericController<Member, String>{
     }
 
     @Override
+    @RequestMapping(method = RequestMethod.PUT)
     public boolean update(Member object) {
-        return false;
+        return memberService.update(object);
     }
 
     @Override
-    public boolean delete(String id) {
-        return false;
-    }
-
-    @Override
-    public List<Member> find(int page, String sortOption) {
-        return null;
+    @RequestMapping(path = "/{memberId}", method = RequestMethod.DELETE)
+    public boolean delete(@PathVariable("memberId") String memberId) {
+        return memberService.delete(memberId);
     }
 }

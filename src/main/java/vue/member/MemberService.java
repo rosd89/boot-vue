@@ -23,10 +23,30 @@ public class MemberService {
         return true;
     }
 
-    public Member findOne(String userId) {
-        Member m = members.get(userId);
+    public Member findOne(String memberId) {
+        Member m = members.get(memberId);
         if(isNull(m)) return null;
 
         return m;
+    }
+
+    public boolean update(Member object) {
+        Member m = members.get(object.getId());
+        m.setEmail(object.getEmail());
+        m.setName(object.getName());
+
+        members.put(object.getId(), m);
+        return true;
+    }
+
+    public boolean delete(String memberId) {
+        Member m = members.get(memberId);
+
+        if(isNull(m)){
+            return false;
+        }
+
+        members.remove(memberId);
+        return true;
     }
 }
