@@ -1,0 +1,36 @@
+.has-success label {
+    color: #00a65a;
+}
+.has-success .form-control,
+.has-success .input-group-addon {
+    border-color: #00a65a;
+    box-shadow: none;
+}
+.has-success .help-block {
+    color: #00a65a;
+}
+.has-warning label {
+    color: #f39c12;
+}
+.has-warning .form-control,
+.has-warning .input-group-addon {
+    border-color: #f39c12;
+    box-shadow: none;
+}
+.has-warning .help-block {
+    color: #f39c12;
+}
+.has-error label {
+    color: #dd4b39;
+}
+.has-error .form-control,
+.has-error .input-group-addon {
+    border-color: #dd4b39;
+    box-shadow: none;
+}
+.has-error .help-block {
+    color: #dd4b39;
+}
+.info-text {
+    color: #0000ff;
+}

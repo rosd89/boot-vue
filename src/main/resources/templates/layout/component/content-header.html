@@ -1,0 +1,10 @@
+<template id="v-content-header">
+    <div class="content-header">
+        <h1>
+            {{title}}
+        </h1>
+        <ol v-if="dep.length > 0" class="breadcrumb">
+            <li v-for="item in dep">{{item}}</li>
+        </ol>
+    </div>
+</template>

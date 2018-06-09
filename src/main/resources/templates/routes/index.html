@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorate="~{layout/layout}">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Boot Vue Admin LTE</title>
+</head>
+
+<div layout:fragment="v-template">
+</div>
+
+<div class="content v-content" layout:fragment="content">
+    <v-content-header
+        :title="header.title"
+        :dep="header.dep"
+    ></v-content-header>
+</div>
+
+<script th:inline="javascript" layout:fragment="script">
+    /*<![CDATA[*/
+    (function () {
+        new Vue({
+            el: '.v-content',
+            data: function () {
+                return {
+                    header: {
+                        title: '소재 관리',
+                        dep: ['웹툰관리', '소재관리']
+                    }
+                }
+            }
+        });
+    })();
+</script>
+
+</html>

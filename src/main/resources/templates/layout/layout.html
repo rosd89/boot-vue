@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+
+    <head>
+        <title>Boot Vue Admin LTE</title>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+        <link rel="stylesheet" href="/bower_components/bootstrap//dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/bower_components/Ionicons/css/ionicons.min.css">
+        <link rel="stylesheet" href="/dist/css/AdminLTE.min.css">
+        <link rel="stylesheet" href="/dist/css/skins/skin-blue-light.min.css">
+        <link rel="stylesheet"
+              href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+        <link rel="stylesheet" href="/app/style.css">
+
+    </head>
+
+    <body class="hold-transition skin-blue-light sidebar-mini">
+        <div class="v-default-template">
+            <div th:replace="/layout/component/content-header"></div>
+        </div>
+        <div layout:fragment="v-template"></div>
+
+        <div class="wrapper">
+            <header class="main-header">
+                <div th:replace="/layout/fragments/header"></div>
+            </header>
+
+            <aside class="main-sidebar">
+                <section class="sidebar">
+                    <ul class="sidebar-menu" data-widget="tree">
+                        <li class="header">관리 메뉴</li>
+
+                        <!-- Sidebar Menu Items -->
+                        <div th:replace="/layout/fragments/menuitems/menu_ex"></div>
+
+                    </ul>
+                </section>
+            </aside>
+
+            <div class="content-wrapper">
+                <!-- Main content -->
+                <section layout:fragment="content"></section>
+                <!-- /.content -->
+            </div>
+
+            <!-- /.content-wrapper -->
+            <footer class="main-footer">
+                <div th:replace="/layout/fragments/footer"></div>
+            </footer>
+        </div>
+    </body>
+
+    <!-- Vue -->
+    <script src="/plugins/vue/vue.js"></script>
+    <script src="/app/default.js"></script>
+
+    <!-- jQuery 3 -->
+    <script src="/bower_components/jquery//dist/jquery.min.js"></script>
+    <!-- Bootstrap 3.3.7 -->
+    <script src="/bower_components/bootstrap//dist/js/bootstrap.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="/dist/js/adminlte.min.js"></script>
+
+    <!-- Common Script -->
+    <script type="text/javascript">
+        $(function () {
+            $('section.sidebar a').each(function () {
+                if ($(this).attr('href') == window.location.pathname) {
+                    $(this).parents().each(function () {
+                        if ($(this).hasClass('treeview')) {
+                            $(this).addClass('active');
+                            $(this).addClass('menu-open');
+                        }
+
+                        if ($(this).parent().hasClass('treeview-menu')) {
+                            $(this).addClass('active');
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+
+    <script type="text/javascript" layout:fragment="script"></script>
+
+</html>
