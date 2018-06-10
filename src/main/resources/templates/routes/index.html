@@ -11,11 +11,24 @@
 <div layout:fragment="v-template">
 </div>
 
-<div class="content v-content" layout:fragment="content">
+<div class="v-content" layout:fragment="content">
     <v-content-header
-        :title="header.title"
-        :dep="header.dep"
+            :title="header.title"
+            :dep="header.dep"
     ></v-content-header>
+    <v-content-body>
+        <v-box>
+            <v-box-header title="Box Title">
+                Box Header 내용
+            </v-box-header>
+            <v-box-body>
+                Box Body 내용
+            </v-box-body>
+            <v-box-footer>
+                Box Footer 내용
+            </v-box-footer>
+        </v-box>
+    </v-content-body>
 </div>
 
 <script th:inline="javascript" layout:fragment="script">
@@ -26,8 +39,8 @@
             data: function () {
                 return {
                     header: {
-                        title: '소재 관리',
-                        dep: ['웹툰관리', '소재관리']
+                        title: '본문 Title',
+                        dep: ['본문경로1', '본문경로2']
                     }
                 }
             }

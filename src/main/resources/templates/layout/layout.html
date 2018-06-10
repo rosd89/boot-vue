@@ -12,16 +12,21 @@
         <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.min.css">
         <link rel="stylesheet" href="/bower_components/Ionicons/css/ionicons.min.css">
         <link rel="stylesheet" href="/dist/css/AdminLTE.min.css">
-        <link rel="stylesheet" href="/dist/css/skins/skin-blue-light.min.css">
+        <link rel="stylesheet" href="/dist/css/skins/skin-green-light.min.css">
         <link rel="stylesheet"
               href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
         <link rel="stylesheet" href="/app/style.css">
 
     </head>
 
-    <body class="hold-transition skin-blue-light sidebar-mini">
+    <body class="hold-transition skin-green-light sidebar-mini">
         <div class="v-default-template">
             <div th:replace="/layout/component/content-header"></div>
+            <div th:replace="/layout/component/content-body"></div>
+            <div th:replace="/layout/component/box/box"></div>
+            <div th:replace="/layout/component/box/box-header"></div>
+            <div th:replace="/layout/component/box/box-body"></div>
+            <div th:replace="/layout/component/box/box-footer"></div>
         </div>
         <div layout:fragment="v-template"></div>
 
